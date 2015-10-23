@@ -8,9 +8,6 @@ Ctrl = ($scope,$state,Session,$uibModal,$rootScope,$http)->
       templateUrl: 'modules/navbar/loginModal.html'
     )
 
-    $scope.modalInstance.result.then (data) ->
-      console.log(data)
-
   $scope.logout = () ->
     Session.logout().$promise.then (success) ->
       $rootScope.clearSession()
@@ -27,6 +24,9 @@ Ctrl = ($scope,$state,Session,$uibModal,$rootScope,$http)->
         $http.defaults.headers.common.UserId = data.user_id
         $scope.credentials = {}
         $scope.modalInstance.close()
+
+  $scope.cancel = () ->
+    $scope.modalInstance.close()
 
 Ctrl.$inject = ['$scope','$state','Session','$uibModal','$rootScope','$http']
 angular.module('client').controller('NavbarCtrl', Ctrl)
