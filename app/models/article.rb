@@ -32,5 +32,9 @@ class Article < ActiveRecord::Base
     Indexer.perform('delete', self.id, self.class)
   end
 
+  def as_json options={}
+    super options.merge(include: :category)
+  end
+
 end
 

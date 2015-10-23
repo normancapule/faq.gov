@@ -1,19 +1,29 @@
-.container
+.container.article
   .row
-    .col-sm-12
-      h3 ng-bind="article.title"
-  .row
-    .col-sm-7
-      div ng-bind-html="article.content"
-    .col-sm-5
+    .col-sm-4.left
+      br
       .panel.panel-default
         .panel-body
-          h5.text-center Helpful Tips
+          h4 Helpful Tips
+          hr
           ul
             li(ng-repeat="tip in tips")
               p ng-bind="tip.content"
-          p.text-center
-            a href="" ng-click="addTip()" I WANT TO ADD A TIP
+            li Come in before 8am, to avoid long lines
+          p
+            a.btn.btn-default href="" ng-click="addTip()" I WANT TO ADD A TIP
+
+          br
+          h4 More articles under {{article.category.name}}
+          hr
+          ul.more-articles
+            li(ng-repeat="article in relatedArticles")
+              a href="/articles/{{article.id}}" {{article.title}}
+    .col-sm-8.content
+      br
+      h3 ng-bind="article.title"
+      hr
+      div ng-bind-html="article.content"
   hr
   .row
     .col-sm-12
