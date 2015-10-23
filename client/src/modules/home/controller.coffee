@@ -11,5 +11,9 @@ Ctrl = ($scope,$state,Search)->
       console.log(data)
       return data.collection
 
+  $scope.onSelect = ($item, $model, $label) ->
+    console.log($model)
+    console.log($item)
+    console.log($label)
 Ctrl.$inject = ['$scope','$state','Search']
 angular.module('client').controller('HomeCtrl', Ctrl)

@@ -1,5 +1,4 @@
 class Api::V1::CategoriesController < ApiController
-  before_action :find_user
   before_filter :find_category, except: [:index]
 
   def index
@@ -7,7 +6,7 @@ class Api::V1::CategoriesController < ApiController
   end
 
   def create
-    @obj = @user.categories.create(category_params)
+    @obj = current_user.categories.create(category_params)
     common_create
   end
 
