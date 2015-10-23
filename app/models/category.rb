@@ -19,6 +19,7 @@ class Category < ActiveRecord::Base
   end
 
   has_many :articles, dependent: :destroy
+  validates :name, uniqueness: true
 end
 
 
