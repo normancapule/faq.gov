@@ -4,6 +4,7 @@ angular.module('client').run [
     $rootScope.clearSession = ->
       localStorage.removeItem("AuthToken")
       localStorage.removeItem("UserId")
+      $rootScope.currentUser = null
 
 ]
 

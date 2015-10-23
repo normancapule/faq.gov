@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   get "/categories" => "application#index"
   get "/categories/*path" => "application#index"
   get "/articles/*path" => "application#index"
-  get "/login" => "application#index"
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
     username == 'r1sk' && password == 'r1sk'
   end if Rails.env.production?

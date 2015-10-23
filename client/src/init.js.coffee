@@ -8,7 +8,7 @@ angular.module(
     'ngAnimate',
     'textAngular',
     'ui.bootstrap',
-    'Navbar'
+    'Navbar',
     'angularVideoBg'
   ]
 ).config ->
