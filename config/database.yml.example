@@ -1,0 +1,11 @@
+common: &common
+  adapter: postgresql
+  template: template0
+  username: postgres
+  pool: 5
+development:
+  <<: *common
+  database: faq_development
+test:
+  <<: *common
+  database: faq_test
