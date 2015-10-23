@@ -2,7 +2,7 @@ class Api::V1::CategoriesController < ApiController
   before_filter :find_category, except: [:index]
 
   def index
-    render json: Category.all
+    render json: {collection: Category.all}
   end
 
   def show

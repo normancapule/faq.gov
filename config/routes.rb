@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get "/admin" => "application#index"
   get "/admin/*path" => "application#index"
   get "/home/*path" => "application#index"
+  get "/categories" => "application#index"
   get "/categories/*path" => "application#index"
   get "/articles/*path" => "application#index"
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
