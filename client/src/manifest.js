@@ -20,6 +20,7 @@
 //= require angular-bootstrap/ui-bootstrap
 //= require angular-bootstrap/ui-bootstrap-tpls
 //= require angular-video-bg/angular-video-bg
+//= require wow/dist/wow
 
 //= require init.js
 //= require_tree ./modules

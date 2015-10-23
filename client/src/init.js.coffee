@@ -11,5 +11,7 @@ angular.module(
     'Navbar'
     'angularVideoBg'
   ]
-)
+).config ->
+  new WOW().init()
+
 

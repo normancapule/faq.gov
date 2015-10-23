@@ -15,7 +15,7 @@ module Queries
           { 'created_at': 'desc'}
         ]
       }
-      Elasticsearch::Model.search(query, [Article, Category])
+      Elasticsearch::Model.search(query, [Article])
     end
   end
 end
