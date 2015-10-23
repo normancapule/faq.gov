@@ -1,12 +1,13 @@
 class Api::V1::ArticlesController < ApiController
-  before_filter :get_category
-  before_filter :get_obj, except: [:index]
+  before_filter :get_category, except: [:show]
+  before_filter :get_obj, except: [:index, :show]
 
   def index
     render json: @category.articles
   end
 
   def show
+    @obj = Article.find(params[:id])
     common_show
   end
 
