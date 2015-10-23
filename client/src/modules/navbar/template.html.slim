@@ -6,11 +6,14 @@ nav.navbar.navbar-default
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand ui-sref="home" FAQ.GOV.PH
+      a.navbar-brand ui-sref="home" FAQGOV-PH
 
     .collapse.navbar-collapse
-      ul.nav.navbar-nav.navbar-right
-        li(ng-if="!currentUser")
+      ul.nav.navbar-nav.navbar-right(ng-if="!currentUser")
+        li
           a href="#" ng-click="openModal()"  Login
-        li(ng-if="currentUser")
+      ul.nav.navbar-nav.navbar-right(ng-if="currentUser")
+        li
+          a href="#" ui-sref="admin"  Admin
+        li
           a href="#" ng-click="logout()"  Logout

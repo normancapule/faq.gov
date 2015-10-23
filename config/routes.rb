@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   end
 
   root :to => "application#index"
+  get "/admin" => "application#index"
+  get "/admin/*path" => "application#index"
   get "/home/*path" => "application#index"
   get "/categories/*path" => "application#index"
   get "/articles/*path" => "application#index"
