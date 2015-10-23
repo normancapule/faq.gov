@@ -7,7 +7,8 @@ angular.module(
     'ngResource',
     'ngAnimate',
     'textAngular',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'Navbar'
   ]
 )
 
