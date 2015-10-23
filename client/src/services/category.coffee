@@ -1,7 +1,11 @@
 module = ($resource)->
 
 
-  Category = $resource "/api/categories", null, {}
+  Category = $resource "/api/categories", null, {
+    getList:
+      method: 'GET'
+      url: '/api/categories'
+  }
 
   Category
 

@@ -1,4 +1,14 @@
-form
-  h1 Add new Category
-  input ng-model="" name="Category Name"
-  button ng-click="" Add
+table#category-table
+  thead
+    tr
+      button ng-click="addPage()" Add new Category
+    tr
+      th Name
+  tbody
+    tr ng-repeat="obj in collection"
+      td ng-bind="obj.name"
+      td
+        button ng-click="" Edit
+      td
+        button ng-click="" Delete
+  
