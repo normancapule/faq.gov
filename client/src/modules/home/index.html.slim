@@ -4,4 +4,12 @@ video-bg video-id="vid" class="backdrop"
       .col-sm-12.jumbotron
         h1 Ultimate Guide to Government Benefits
         br
-        input.form-control.input-lg.search type="text" placeholder="Try searching for: BIR, SSS, Driver's License"
+        input.form-control.input-lg.search(type="text" ng-model="results"
+          placeholder="Try searching for: BIR, SSS, Driver's License"
+          typeahead-loading="loadingResults" typeahead-no-results="noResults"
+          uib-typeahead=("result.title for result in getResult($viewValue)")
+        )
+        i.glyphicon.glyphicon-refresh ng-show="loadingLocations"
+        div ng-show="noResults"
+          i.glyphicon.glyphicon-remove
+          | No Results Found
