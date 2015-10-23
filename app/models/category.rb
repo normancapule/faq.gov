@@ -10,6 +10,10 @@
 class Category < ActiveRecord::Base
   has_many :articles, dependent: :destroy
   validates :name, uniqueness: true
+
+  def as_json options={}
+    super options.merge(include: :articles)
+  end
 end
 
 
