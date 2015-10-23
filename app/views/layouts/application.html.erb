@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>FaqGov</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>FaqGov</title>
+    <base href="/" />
 
-<%= yield %>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="text/html;charset=UTF-8" http-equiv="content-type" />
 
-</body>
+    <%= stylesheet_link_tag    "app" %>
+
+    <%= javascript_include_tag "app" %>
+
+  </head>
+  <body ng-app="client">
+    <div ui-view=""></div>
+  </body>
 </html>
