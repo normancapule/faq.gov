@@ -25,7 +25,8 @@
     "textAngular": "~1.4.6",
     "angular-bootstrap": "~0.14.2",
     "bootstrap-sass": "~3.3.5",
-    "angular-video-bg": "~0.3.3"
+    "angular-video-bg": "~0.3.3",
+    "wow": "wowjs#~1.1.2"
   },
   "resolutions": {
     "angular": ">= 1.0.8"

@@ -1,7 +1,67 @@
-video-bg video-id="vid" class="backdrop"
-  .container.landing
-    .row
-      .col-sm-12.jumbotron
-        h1 Ultimate Guide to Government Benefits
+.row
+  video-bg video-id="vid" class="backdrop"
+    .container.landing
+      .col-sm-12.jumbotron.wow.fadeInDown
+        h1 The Ultimate Guide to Government Services
         br
-        input.form-control.input-lg.search type="text" placeholder="Try searching for: BIR, SSS, Driver's License"
+        input.form-control.input-lg.search(type="text" ng-model="results"
+          placeholder="Try searching for: BIR, SSS, Driver's License"
+          typeahead-loading="loadingResults" typeahead-no-results="noResults"
+          typeahead-wait-ms="300"
+          uib-typeahead=("result.title for result in getResult($viewValue)")
+        )
+        i.glyphicon.glyphicon-refresh ng-show="loadingLocations"
+        div ng-show="noResults"
+          i.glyphicon.glyphicon-remove
+          | No Results Found
+
+.row.offices.wow.slideInUp
+  .container
+    .col-sm-4
+      h4 Bureau of Internal Revenue
+      ul
+        li Something
+        li Something
+        li Something
+        li Something
+      h4 Land Transportation Office
+      ul
+        li Something
+        li Something
+        li Something
+        li Something
+    .col-sm-4
+      h4 Social Security Service
+      ul
+        li Something
+        li Something
+        li Something
+        li Something
+      h4 Department of Foreign Affairs
+      ul
+        li Something
+        li Something
+        li Something
+        li Something
+    .col-sm-4
+      h4 PhilHealth
+      ul
+        li Something
+        li Something
+        li Something
+        li Something
+      h4 Pagibig - HDMF
+      ul
+        li Something
+        li Something
+        li Something
+        li Something
+
+.row.footer
+  .container
+    .col-sm-4
+      h1 Blah blah
+    .col-sm-4
+      h1 Blah blah
+    .col-sm-4
+      h1 Blah blah
