@@ -8,12 +8,10 @@ Ctrl = ($scope,$state,Search)->
       query: val
     )
     .$promise.then (data) ->
-      console.log(data)
       return data.collection
 
   $scope.onSelect = ($item, $model, $label) ->
-    console.log($model)
-    console.log($item)
-    console.log($label)
+    $state.go('articles.show', {id: $item.id})
+
 Ctrl.$inject = ['$scope','$state','Search']
 angular.module('client').controller('HomeCtrl', Ctrl)
