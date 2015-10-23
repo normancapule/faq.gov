@@ -4,8 +4,8 @@ Ctrl = ($scope, $state, Search, Category)->
 
   $scope.categories = {}
 
-  Category.query().$promise.then (data) ->
-    $scope.categories = data
+  Category.getList().$promise.then (data) ->
+    $scope.categories = data.collection
 
   $scope.getResult = (val) ->
     Search.search(
