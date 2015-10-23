@@ -2,7 +2,7 @@ Ctrl = ($scope,$state,$stateParams,Category)->
   $scope.collection = []
 
   $scope.addPage =->
-    $state.transitionTo('categories.add')
+    $state.go('categories.add')
 
   Category.getList().$promise
     .then (data) ->

@@ -1,1 +1,9 @@
-h1 Add new category page
+form
+  h1 Add new category page
+  br
+
+  input ng-model="currentCategory.name" name="CategoryName"
+  br
+  br
+  button ng-click="addNewCategory()" Add
+  button ng-click="backToIndexPage()" Back

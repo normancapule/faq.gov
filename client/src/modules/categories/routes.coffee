@@ -5,6 +5,11 @@ angular.module('client').config [
     $stateProvider
       .state 'categories',
         url: '/categories',
+        templateUrl: 'modules/categories/layout.html',
+        abstract: true
+
+      .state 'categories.index',
+        url: '',
         controller: 'CategoriesCtrl',
         templateUrl: 'modules/categories/index.html'
         data:

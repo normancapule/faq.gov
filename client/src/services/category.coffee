@@ -4,6 +4,7 @@ module = ($resource)->
   Category = $resource "/api/categories", null, {
     getList:
       method: 'GET'
+      isArray: false
       url: '/api/categories'
   }
 
