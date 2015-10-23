@@ -17,33 +17,43 @@ ActiveRecord::Schema.define(version: 20151023030134) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.integer "category_id"
-    t.text    "title"
-    t.text    "content"
+    t.integer  "category_id"
+    t.text     "title"
+    t.text     "content"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "categories", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "name"
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "comment_id"
-    t.integer "article_id"
-    t.text    "content"
+    t.integer  "user_id"
+    t.integer  "comment_id"
+    t.integer  "article_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
-    t.integer "article_id"
-    t.integer "user_id"
-    t.string  "name"
+    t.integer  "article_id"
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tips", force: :cascade do |t|
-    t.integer "article_id"
-    t.integer "user_id"
-    t.text    "content"
+    t.integer  "article_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

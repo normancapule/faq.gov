@@ -6,6 +6,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'slim-rails'
 gem 'redis-rails'
+gem 'sidekiq'
+gem 'sidekiq-failures'
+gem 'sinatra', require: nil
 gem 'pg'
 gem 'bcrypt'
 gem 'thin'
@@ -15,6 +18,8 @@ gem 'multi_json'
 gem 'angular-rails-templates','0.1.3'
 gem 'factory_girl_rails'
 gem 'faker'
+gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 
 group :development, :test do
   gem 'api_matchers'

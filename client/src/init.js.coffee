@@ -9,6 +9,7 @@ angular.module(
     'textAngular',
     'ui.bootstrap',
     'Navbar'
+    'angularVideoBg'
   ]
 )
 

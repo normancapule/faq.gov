@@ -1,8 +1,11 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     scope module: :v1 do
       resource :session, only: %i(show create destroy)
       resource :registration, only: %i(create)
+      resources :search, only: [:index]
       resources :categories do
         resources :articles
       end
@@ -17,4 +20,8 @@ Rails.application.routes.draw do
   root :to => "application#index"
   get "/home/*path" => "application#index"
   get "/login" => "application#index"
+  Sidekiq::Web.use Rack::Auth::Basic do |username, password|
+    username == 'r1sk' && password == 'r1sk'
+  end if Rails.env.production?
+  mount Sidekiq::Web => '/sidekiq'
 end

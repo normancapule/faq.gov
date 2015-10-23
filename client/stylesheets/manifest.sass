@@ -3,3 +3,34 @@
 //= require textAngular/dist/textAngular
 
 @import "vendor/swal"
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,400italic,100)
+
+body 
+  font-family: 'Roboto', sans-serif
+
+.navbar
+  margin-bottom: 0
+
+.landing
+  min-height: 700px
+  display: flex
+  justify-content: space-around
+  align-items: center
+
+  .jumbotron
+    background: none
+    align-self: center
+    margin: auto
+
+    input.search
+      background: transparent
+
+    h1 
+      font-weight: 700
+      font-size: 50px
+      color: white
+
+.backdrop
+  [ng-transclude]
+    background: rgba(1, 1, 1, 0.65)
+
