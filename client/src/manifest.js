@@ -21,6 +21,7 @@
 //= require angular-bootstrap/ui-bootstrap-tpls
 //= require angular-video-bg/angular-video-bg
 //= require wow/dist/wow
+//= require sweetalert/dist/sweetalert.min
 
 //= require init.js
 //= require_tree ./modules

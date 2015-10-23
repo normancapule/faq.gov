@@ -1,5 +1,22 @@
-.row
-  .container
+.container
+  .row
     .col-sm-12
       h3 ng-bind="article.title"
+  .row
+    .col-sm-7
       div ng-bind-html="article.content"
+    .col-sm-5
+      .panel.panel-default
+        .panel-body
+          h5.text-center Helpful Tips
+          ul
+            li(ng-repeat="tip in tips")
+              p ng-bind="tip.content"
+          p.text-center
+            a href="" ng-click="addTip()" I WANT TO ADD A TIP
+  hr
+  .row
+    .col-sm-12
+      h5 Comments & Suggestions?
+      ul(ng-repeat="comment in comments")
+        li ng-bind="comment.content"
