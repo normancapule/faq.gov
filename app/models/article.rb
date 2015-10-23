@@ -28,9 +28,5 @@ class Article < ActiveRecord::Base
 
   after_destroy :remove_cache
 
-  def remove_cache
-    Indexer.perform('delete', self.id, self.class)
-  end
-
 end
 

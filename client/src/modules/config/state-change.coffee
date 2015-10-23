@@ -22,7 +22,7 @@ angular.module('client').run [
                 localStorage.removeItem('AuthToken')
                 localStorage.removeItem('UserId')
                 localStorage.removeItem('SearchApiLink')
-                $state.go("login")
+                $rootScope.broadcast 'login', {}
         else
           evalState toState,toParams
 
@@ -37,12 +37,12 @@ angular.module('client').run [
         else
           $state.go(toState.name, toParams)
       else if toState.data.unauthenticated && $rootScope.currentUser
-        $state.go('home')
+        $state.go(toState.name, toParams)
       else if toState.data.unauthenticated && !$rootScope.currentUser
         $state.go(toState.name, toParams)
       else
         setUrlToCache(toState, toParams)
-        $state.go("login")
+        $rootScope.broadcast 'login', {}
 
     setUrlToCache = (toState, toParams='{}') ->
       localStorage.setItem('originalUrlName', toState.name)

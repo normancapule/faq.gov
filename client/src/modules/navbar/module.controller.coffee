@@ -1,5 +1,8 @@
 Ctrl = ($scope,$state,Session,$uibModal,$rootScope,$http)->
   $scope.credentials = {}
+  $rootScope.$on 'login', () ->
+    $scope.openModal()
+
   $scope.openModal = () ->
     $scope.modalInstance = $uibModal.open(
       templateUrl: 'modules/navbar/loginModal.html'
