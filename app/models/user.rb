@@ -31,16 +31,6 @@ class User < ActiveRecord::Base
     user if user.present? && user.valid_password?(creds[:password])
   end
 
-  private
-
-  def update_cache
-    if $redis.set("#{self.class.table_name}/#{self.id}", self.to_json) == "OK"
-      true
-    else
-      false
-    end
-  end
-
   def set_access_token
     self.update_attribute(:access_token, SecureRandom.urlsafe_base64(20).tr('lIO0', 'sxyz'))
     self.update_cache
@@ -50,5 +40,13 @@ class User < ActiveRecord::Base
     self.reload
     self.update_attribute(:access_token, nil)
     self.update_cache
+  end
+
+  def update_cache
+    if $redis.set("#{self.class.table_name}/#{self.id}", self.to_json) == "OK"
+      true
+    else
+      false
+    end
   end
 end

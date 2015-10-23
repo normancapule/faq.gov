@@ -21,7 +21,7 @@
     "sweetalert": "~1.1.0",
     "angular-aria": "~1.4.7",
     "angular-sanitize": "~1.4.7",
-    "respond": "~1.4.2"
+    "respond": "~1.4.2",
+    "textAngular": "~1.4.6"
   }
 }
-
