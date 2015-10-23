@@ -1,13 +1,23 @@
 module Queries
   class All
-    SEARCHATTRIBUTES = %w(content title name tags)
     def self.search(query)
       query = {
         query: {
-          multi_match: {
-            query: query,
-            fields: SEARCHATTRIBUTES,
-            lenient: true
+          bool: {
+            should: [{
+              multi_match: {
+                fields: %q(title),
+                lenient: true,
+                query: query,
+              }
+            }, {
+              multi_match: {
+                query: query,
+                fields: %q(content),
+                type: 'phrase',
+                lenient: true
+              },
+            }]
           }
         },
         sort: [

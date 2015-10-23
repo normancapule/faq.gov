@@ -1,7 +1,6 @@
 module = ($resource)->
 
-
-  Category = $resource "/api/categories", null, {
+  Category = $resource "/api/categories/:id", null, {
     getList:
       method: 'GET'
       isArray: false

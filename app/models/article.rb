@@ -28,9 +28,8 @@ class Article < ActiveRecord::Base
 
   after_destroy :remove_cache
 
-  def remove_cache
-    Indexer.perform('delete', self.id, self.class)
+  def as_json options={}
+    super options.merge(include: :category)
   end
-
 end
 
