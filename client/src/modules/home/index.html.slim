@@ -1,7 +1,7 @@
 .row
   video-bg video-id="vid" class="backdrop"
     .container.landing
-      .col-sm-12.jumbotron.wow.fadeInDown
+      .col-sm-12.jumbotron.wow.fadeInUp
         h1 The Ultimate Guide to Government Services
         br
         input.form-control.input-lg.search(type="text" ng-model="results"
@@ -15,53 +15,40 @@
           i.glyphicon.glyphicon-remove
           | No Results Found
 
-.row.offices.wow.slideInUp
+.row.offices.wow.fadeIn
   .container
-    .col-sm-4
-      h4 Bureau of Internal Revenue
+    .col-sm-4(ng-repeat="category in categories")
+      h3 ng-bind="category.name"
       ul
-        li Something
-        li Something
-        li Something
-        li Something
-      h4 Land Transportation Office
-      ul
-        li Something
-        li Something
-        li Something
-        li Something
-    .col-sm-4
-      h4 Social Security Service
-      ul
-        li Something
-        li Something
-        li Something
-        li Something
-      h4 Department of Foreign Affairs
-      ul
-        li Something
-        li Something
-        li Something
-        li Something
-    .col-sm-4
-      h4 PhilHealth
-      ul
-        li Something
-        li Something
-        li Something
-        li Something
-      h4 Pagibig - HDMF
-      ul
-        li Something
-        li Something
-        li Something
-        li Something
+        li(ng-repeat="article in category.articles")
+          a href="/article/{{article.id}}" ng-bind="article.title"
 
 .row.footer
+  br
   .container
     .col-sm-4
-      h1 Blah blah
+      h6 Government Agencies
+      ul
+        li Land Transporation Office
+        li Department of Foreign Affairs
+        li Global Service Insurance System
+        li Home Development Mutual Fund
+        li Bureau of Internal Revenue
+        li Department of Trade and Industry
     .col-sm-4
-      h1 Blah blah
+      h6 Site Information
+      ul
+        li About
+        li Privacy
+        li Terms
+
+      br
+      h6 Want to help?
+      ul
+        li Report Wrong Data
+        li Request for Missing Information
     .col-sm-4
-      h1 Blah blah
+      h6 Made with &hearts; by SourcePad
+
+  br
+  br
