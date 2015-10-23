@@ -1,7 +1,7 @@
 module = ($resource)->
 
 
-  Category = $resource "/api/categories", null, {}
+  Category = $resource "/api/categories/:id", null, {}
 
   Category
 

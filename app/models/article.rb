@@ -28,5 +28,8 @@ class Article < ActiveRecord::Base
 
   after_destroy :remove_cache
 
+  def as_json options={}
+    super options.merge(include: :category)
+  end
 end
 

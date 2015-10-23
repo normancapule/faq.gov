@@ -5,6 +5,10 @@ class Api::V1::CategoriesController < ApiController
     render json: Category.all
   end
 
+  def show
+    render json: Category.find(params[:id])
+  end
+
   def create
     @obj = current_user.categories.create(category_params)
     common_create
