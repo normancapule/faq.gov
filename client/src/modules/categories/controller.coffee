@@ -1,4 +1,4 @@
-Ctrl = ($scope,$state)->
+Ctrl = ($scope,$state, $http)->
 
 
 Ctrl.$inject = ['$scope','$state']
