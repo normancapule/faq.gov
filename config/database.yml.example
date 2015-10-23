@@ -2,6 +2,7 @@ common: &common
   adapter: postgresql
   template: template0
   username: postgres
+  password: chung555
   pool: 5
 development:
   <<: *common
