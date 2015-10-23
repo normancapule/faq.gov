@@ -1,6 +1,6 @@
 class Api::V1::CommentsController < ApiController
   before_filter :get_article
-  before_filter :get_obj, except: [:index]
+  before_filter :get_obj, except: [:index, :create]
 
   def index
     render json: @article.comments

@@ -10,7 +10,7 @@
             li(ng-repeat="tip in tips")
               p ng-bind="tip.content"
             li Come in before 8am, to avoid long lines
-          p.text-center(ng-if="currentUser")
+          p.text-center
             a.btn.btn-default href="" ng-click="addTip()" I WANT TO ADD A TIP
 
           br
@@ -19,14 +19,16 @@
           ul.more-articles
             li(ng-repeat="article in relatedArticles")
               a href="/articles/{{article.id}}" {{article.title}}
+      hr
+      .panel.panel-default
+        .panel-body
+          h4 Comments & Suggestions?
+          ul(ng-repeat="comment in comments")
+            li ng-bind="comment.content"
+          p.text-center
+            a.btn.btn-default href="" ng-click="addComment()" I WANT TO ADD A COMMENT / SUGGESTION
     .col-sm-8.content
       br
       h3 ng-bind="article.title"
       hr
       div ng-bind-html="article.content"
-  hr
-  .row
-    .col-sm-12
-      h5 Comments & Suggestions?
-      ul(ng-repeat="comment in comments")
-        li ng-bind="comment.content"

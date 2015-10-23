@@ -28,5 +28,18 @@ Ctrl = ($scope,$state,$stateParams, Article, Tip, Comment, Category, $rootScope,
       $scope.modalInstance.result.then (data) ->
         $scope.tips.push data
 
+  $scope.addComment = () ->
+    if !$rootScope.currentUser
+      $rootScope.$broadcast 'login', {}
+    else
+      $scope.modalInstance = $uibModal.open(
+        templateUrl: 'modules/articles/addCommentModal.html'
+        controller: 'commentModalCtrl'
+        resolve:
+          articleId: $scope.article.id
+      )
+      $scope.modalInstance.result.then (data) ->
+        $scope.comments.push data
+
 Ctrl.$inject = ['$scope','$state','$stateParams','Article','Tip', 'Comment', 'Category', '$rootScope', '$uibModal']
 angular.module('client').controller('ArticleCtrl', Ctrl)
