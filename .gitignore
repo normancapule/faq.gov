@@ -6,7 +6,6 @@
 
 # Ignore bundler config.
 /.bundle
-config/database.yml
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -17,3 +16,5 @@ config/database.yml
 !/log/.keep
 /tmp
 client/components
+config/database.yml
+tags
